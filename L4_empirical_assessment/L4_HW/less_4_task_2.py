@@ -9,7 +9,7 @@ import cProfile
 
 
 def sieve(index):
-    n = index ** 2  # "ошибка в безопасную сторону"; берем размерность списка со значительным запасом
+    n = index ** 2 + 2  # "ошибка в безопасную сторону"; берем размерность списка со значительным запасом
     sieve = [i for i in range(n)]
     sieve[1] = 0
     for i in range(2, n):
@@ -41,9 +41,9 @@ def prime(index):
     return prime_mas[index - 1]
 
 
-# position = int(input("Enter position  of prime number:"))
-# print(sieve(position))
-# print(prime(position))
+position = int(input("Enter position  of prime number:"))
+print(sieve(position))
+print(prime(position))
 
 print("=" * 100)
 # Заисимость явно не линейная
