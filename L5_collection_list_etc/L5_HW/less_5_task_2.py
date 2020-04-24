@@ -57,7 +57,8 @@ for i in range(len_max):
     else:
         in_memory = 0
     sum_num.append(my_sum % 16)
-
+if in_memory > 0:
+    sum_num.append(in_memory)
 # меняем порядок элементов и приводим каждый элемент массива к hex строке
 sum_num.reverse()
 sum_num = decimal_2_hex(sum_num)
