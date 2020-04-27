@@ -9,12 +9,18 @@ def shell_sort(arr):
             yield inc.pop()
 
     for increment in new_increment(arr):
+        print(f'increment: {increment}')
         for i in range(increment, len(arr)):
+            print(f'\ti: {i}')
             for j in range(i, increment - 1, -increment):
+                print(f'\t\t\tj: {j}')
+                print(f'\t\t\tarr[j - increment]: {arr[j - increment]}')
+                print(f'\t\t\tarr[j]: {arr[j]}')
                 if arr[j - increment] <= arr[j]:
-                    break
+                    break   # нужен break, т.к. если проход >1, то на предыдущих шагах мы уже все упорядочили
                 arr[j], arr[j - increment] = arr[j - increment], arr[j]
-        print(arr)
+                print(array)
+        print(f'i arr {arr}')
 
 
 array = [8, 9, 4, 1, 0, 3, 7, 6, 2, 5]
